@@ -1,0 +1,21 @@
+# ---- 虚拟环境 ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# ---- 数据产物（体积大 + 含真实经营数据，不要进仓库）----
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+raw/
+xlsx/
+logs/
+work/
+frida/*.jsonl
+*.xlsx
+
+# ---- 可能的本地残留 ----
+.DS_Store
+*.log
+tmp/
