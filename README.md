@@ -36,6 +36,21 @@ cp -a "/Applications/蝶普电商运营管理平台（淘宝版）.app/Contents/
 
 **跑方法二时不要碰 App** —— 它靠前台 UI 操作，抢焦点会失败。
 
+### 网络受限时的克隆 / 推送
+
+在中国大陆直连时 `github.com:443` 常被墙（`api.github.com` 和 `codeload.github.com` 一般能通）。
+如果 `git clone` / `git push` 卡住：
+
+```bash
+# 拉取：走 codeload 下 tarball
+curl -L -o repo.tar.gz \
+  https://codeload.github.com/lifujie1992-wq/diepu-data-export/tar.gz/refs/heads/main
+tar xzf repo.tar.gz && mv diepu-data-export-main diepu-export
+
+# 推送：走 GitHub Git Data API（绕开 github.com:443）
+./push.sh
+```
+
 ## 仓库结构
 
 ```
